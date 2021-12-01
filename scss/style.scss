@@ -1,29 +1,15 @@
 @import 'reset';
 @import 'colors';
+@import 'mixins';
 
+//variables
 $pop: 'Poppins',
 sans-serif;
 $mirza: 'Mirza',
 cursive;
-
-@mixin button {
-    font-family: $pop;
-    letter-spacing: 2px;
-
-}
-
-@mixin border {
-    position: relative;
-
-    &::after {
-        position: absolute;
-        content: '';
-        border: 1px solid;
-        bottom: -.5rem;
-        left: 0;
-        width: 100%;
-    }
-}
+//for borders for hero image-shape
+$posi: -7rem;
+$bor: 90px;
 
 html {
     scroll-behavior: smooth;
@@ -31,17 +17,71 @@ html {
 
 body {
     background-color: $grayish-white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-c;
+    @include cc;
     overflow-x: hidden;
+    position: relative;
+
+    .top-layer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        z-index: 3;
+        background: rgba(0, 0, 0, 0.7);
+
+        .inner {
+            margin-top: 10rem;
+            @include flex-r;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70%;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            scrollbar-color: $grayish-white $trans;
+
+            button {
+                position: absolute;
+                cursor: pointer;
+                color: white;
+                border: none;
+                background: $light-cyan;
+                font-weight: 600;
+                padding: .5rem 1rem;
+                text-transform: uppercase;
+
+                &:hover {
+                    box-shadow: 0px 0px 3px;
+                }
+            }
+
+            img {
+                overflow-y: scroll;
+                width: 140%;
+            }
+        }
+    }
+
+    .block-resume {
+        display: block;
+    }
+}
+
+.overflow {
+    overflow-y: hidden;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-c;
+    @include cc;
     width: 100%;
     height: 90vh;
     font-family: $pop;
@@ -71,7 +111,7 @@ header {
         font-size: 1.2rem;
     }
 
-    button {
+    a {
         border: 2px solid white;
         background: transparent;
         color: white;
@@ -81,7 +121,8 @@ header {
         font-size: .8rem;
         font-weight: 600;
         margin-top: 3rem;
-
+        @include flex-r;
+        @include cc;
 
         &:hover {
             background: $dark-pink;
@@ -124,8 +165,7 @@ nav {
     }
 
     .mobile-nav {
-        display: flex;
-        flex-direction: column;
+        @include flex-c;
         align-items: flex-end;
 
         i {
@@ -138,6 +178,31 @@ nav {
             }
         }
 
+        .resume {
+            display: none;
+
+            a {
+                text-transform: capitalize;
+                @include flex-c;
+                border: 1px solid;
+                text-align: center;
+                font-family: $pop;
+                padding: .5rem;
+                margin: .5rem 0;
+                color: $grayish-white;
+
+                &:hover {
+                    border-color: $light-cyan;
+                    box-shadow: 0px 0px 2px $grayish-white, 0px 0px 3px $grayish-white inset;
+                    text-shadow: 0px 0px 3px $grayish-white;
+                }
+            }
+        }
+
+        .resume-block {
+            display: block;
+        }
+
         .display-mobile {
             width: 100%;
             height: 0rem;
@@ -147,14 +212,14 @@ nav {
 
             .mobile-inner {
                 height: 100%;
-                display: flex;
-                flex-direction: column;
+                @include flex-c;
                 justify-content: space-around;
                 align-items: center;
                 padding: .5rem;
 
                 a {
-                    color: white;
+                    margin: .3rem 0;
+                    color: $grayish-white;
                     font-family: $pop;
                     font-size: .9rem;
                     letter-spacing: 2px;
@@ -168,21 +233,18 @@ nav {
         }
 
         .show {
-            //animation: menu .5s ease-out forwards;
             opacity: 1;
             height: 6rem;
-
             transition: height .2s, opacity .5s ease-in;
         }
     }
 }
 
-
+//about section
 .about {
     background-color: $grayish-white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-c;
+    @include cc;
     font-family: $pop;
     padding: 5rem 2rem;
 
@@ -193,6 +255,7 @@ nav {
         @include border;
     }
 
+    //skill cards section
     .about-inner {
         width: 100%;
         margin-top: 7rem;
@@ -203,7 +266,7 @@ nav {
         line-height: 1.1;
         justify-items: center;
 
-
+        //card
         .p-skills {
             text-align: center;
             color: $grayish-black;
@@ -222,15 +285,14 @@ nav {
 
             .icon {
                 border-radius: .2rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-r;
+                @include cc;
                 background-color: $light-cyan;
                 height: 6rem;
 
 
                 i {
-                    color: white;
+                    color: $grayish-white;
                     font-size: 2.5rem;
                 }
             }
@@ -239,13 +301,12 @@ nav {
     }
 }
 
+// hero intro section
 .intro {
     padding: 0 2rem;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-c;
+    @include cc;
     overflow: hidden;
     margin-bottom: 1rem;
 
@@ -258,44 +319,39 @@ nav {
             width: 100%;
         }
 
-        @mixin b($t, $tc, $b, $bc, $l, $lc, $r, $rc) {
-            border-top: $t solid $tc;
-            border-bottom: $b solid $bc;
-            border-left: $l solid $lc;
-            border-right: $r solid $rc;
-        }
 
+        //border divs to make hexagon shape
         .shape {
             position: absolute;
             width: 0;
             height: 0;
 
             &:nth-of-type(1) {
-                top: -7rem;
-                left: -7rem;
-                @include b(90px, transparent, 90px, transparent, 90px, transparent, 90px, $grayish-white);
+                top: $posi;
+                left: $posi;
+                @include b($bor, $trans, $bor, $trans, $bor, $trans, $bor, $grayish-white);
                 transform: rotate(45deg);
             }
 
             &:nth-of-type(2) {
-                top: -7rem;
-                right: -7rem;
-                @include b(90px, transparent, 90px, transparent, 90px, $grayish-white, 90px, transparent);
+                top: $posi;
+                right: $posi;
+                @include b($bor, $trans, $bor, $trans, $bor, $grayish-white, $bor, $trans);
                 transform: rotate(-45deg);
 
             }
 
             &:nth-of-type(3) {
-                bottom: -7rem;
-                left: -7rem;
-                @include b(90px, $grayish-white, 90px, transparent, 90px, transparent, 90px, transparent);
+                bottom: $posi;
+                left: $posi;
+                @include b($bor, $grayish-white, $bor, $trans, $bor, $trans, $bor, $trans);
                 transform: rotate(45deg);
             }
 
             &:nth-of-type(4) {
-                bottom: -7rem;
-                right: -7rem;
-                @include b(90px, $grayish-white, 90px, transparent, 90px, transparent, 90px, transparent);
+                bottom: $posi;
+                right: $posi;
+                @include b($bor, $grayish-white, $bor, $trans, $bor, $trans, $bor, $trans);
                 transform: rotate(-45deg);
             }
 
@@ -319,15 +375,13 @@ nav {
     }
 }
 
-
+//popup links -reach out to me
 .contact-section {
     width: 11rem;
     position: relative;
     font-family: $pop;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-c;
+    @include cc;
     margin-bottom: 8rem;
 
     .contact {
@@ -384,9 +438,8 @@ nav {
 
             .close {
                 cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-r;
+                @include cc;
                 width: 100%;
                 height: 80%;
                 grid-column: 1/-1;
@@ -431,10 +484,8 @@ nav {
     .card {
         background: white;
         padding: 2rem 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex-c;
+        @include cc;
         text-align: center;
         box-shadow: 0px 5px 3px lightgray;
 
@@ -511,9 +562,8 @@ nav {
     font-family: $pop;
 
     .filter-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-c;
+        @include cc;
         padding: 1.5rem 1rem;
         background-color: $grayish-black;
         color: $grayish-white;
@@ -529,12 +579,13 @@ nav {
             max-width: 25rem;
             width: 100%;
             margin-top: 8rem;
-            display: flex;
+            @include flex-r;
             justify-content: space-evenly;
             align-items: center;
             position: relative;
             z-index: 1;
 
+            //red slider animation box 
             .slider {
                 border-radius: .3rem;
                 position: absolute;
@@ -563,9 +614,8 @@ nav {
                 padding: 0 1rem;
                 font-size: .9rem;
                 font-weight: 600;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-r;
+                @include cc;
                 width: 100%;
                 height: 2rem;
                 text-transform: uppercase;
@@ -574,6 +624,7 @@ nav {
         }
     }
 
+    //project items section
     .items {
         display: grid;
         grid-template-columns: 1fr;
@@ -583,6 +634,7 @@ nav {
         padding: 0 .5rem;
         justify-items: center;
 
+        //single card
         .item-card {
             width: 100%;
             max-width: 25rem;
@@ -601,7 +653,7 @@ nav {
             }
 
             scrollbar-width: thin;
-            scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
+            scrollbar-color: rgba(0, 0, 0, 0.4) $trans;
             border-radius: .3rem;
             box-shadow: 0px 0px 10px gray;
             position: relative;
@@ -628,14 +680,13 @@ nav {
 
                 &:hover {
                     opacity: 1;
-                    text-shadow: 0px 0px 3px white;
+                    text-shadow: 0px 0px 3px $grayish-white;
                     transition: opacity .3s ease-in;
                 }
 
                 i {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    @include flex-r;
+                    @include cc;
                     width: 2.5rem;
                     height: 2.5rem;
                     font-size: 1.1rem;
@@ -658,9 +709,8 @@ nav {
                 transition: opacity .5s ease-in;
 
                 i.fa-eye {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    @include flex-r;
+                    @include cc;
                     width: 100%;
                     height: 100%;
                     font-size: 1.2rem;
@@ -688,8 +738,7 @@ nav {
 
                     .links {
                         height: 100%;
-                        display: flex;
-                        flex-direction: column;
+                        @include flex-c;
                         justify-content: space-around;
                         align-items: center;
 
@@ -761,15 +810,14 @@ nav {
 .email {
     margin-top: 3rem;
     background: $grayish-black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-c;
+    @include cc;
     font-family: $pop;
     width: 100%;
     position: relative;
     margin-top: 10rem;
 
+    //v shape
     &::before {
         position: absolute;
         top: -8rem;
@@ -800,8 +848,7 @@ nav {
     form {
         width: 90%;
         max-width: 30rem;
-        display: flex;
-        flex-direction: column;
+        @include flex-c;
         justify-content: center;
         margin-bottom: 6rem;
         position: relative;
@@ -936,9 +983,8 @@ nav {
 
 
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-c;
+    @include cc;
     width: 100%;
     background-color: $dark-grayish-black;
     position: relative;
@@ -948,7 +994,7 @@ footer {
         margin: 3rem 0;
         width: 80%;
         padding: 1rem;
-        display: flex;
+        @include flex-r;
         justify-content: space-evenly;
 
         a {
@@ -969,9 +1015,8 @@ footer {
 
     .top {
         position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-r;
+        @include cc;
         top: -2rem;
         background-color: $dark-pink;
         width: 3rem;

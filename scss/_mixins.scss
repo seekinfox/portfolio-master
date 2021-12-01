@@ -1,0 +1,39 @@
+@mixin button {
+    font-family: $pop;
+    letter-spacing: 2px;
+}
+
+@mixin border {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        border: 1px solid;
+        bottom: -.5rem;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@mixin flex-c {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin cc {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-r {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin b($t, $tc, $b, $bc, $l, $lc, $r, $rc) {
+    border-top: $t solid $tc;
+    border-bottom: $b solid $bc;
+    border-left: $l solid $lc;
+    border-right: $r solid $rc;
+}

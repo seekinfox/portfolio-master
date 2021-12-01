@@ -14,10 +14,37 @@
     const email = document.querySelector('#email')
     const massage = document.querySelector('#msg')
     const alertmsg = document.querySelector('.alert');
+    const resume = document.querySelector('.rb');
+    const resumeLinks = document.querySelector('.resume')
+    const viewResume = document.querySelector('.vr')
+    const resumebox = document.querySelector('.top-layer')
+    const closer = document.querySelector('.closer')
+    const body = document.getElementsByTagName('body')[0];
+
+    //popup for resume view on mobile
+    viewResume.addEventListener('click', (e) => {
+        e.preventDefault();
+        resumebox.classList.add('block-resume');
+        body.classList.add('overflow');
+
+        closer.addEventListener('click', () => {
+            resumebox.classList.remove('block-resume')
+            body.classList.remove('overflow')
+        })
+    })
+
+    //popup resume option
+    resume.addEventListener('click', (e) => {
+        e.preventDefault();
+        resumeLinks.classList.toggle('resume-block')
+    })
 
     //for menu popup
     icon.addEventListener('click', () => {
         menu.classList.toggle('show');
+        if (resumeLinks.classList.contains('resume-block')) {
+            resumeLinks.classList.remove('resume-block')
+        }
     })
 
 
