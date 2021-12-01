@@ -1,4 +1,4 @@
 # portfolio-master
 a personal portfolio
 
-- Still under developement
+- live-page:[https://seekinfox.github.io/portfolio-master/](https://seekinfox.github.io/portfolio-master/)
