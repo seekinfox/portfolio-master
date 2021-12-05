@@ -1,4 +1,16 @@
 (() => {
+
+    //wow js initiating 
+    wow = new WOW({
+        boxClass: 'wow', // default
+        animateClass: 'animated', // change this if you are not using animate.css
+        offset: 0, // default
+        mobile: true, // keep it on mobile
+        live: true // track if element updates
+    })
+    wow.init();
+    //wow js end  for for more info visit (https://fabriceleven.com/dev/create-animations-on-page-scroll/?__cf_chl_tk=tnDC4nBWeLYy6G_NWlYokMjzmfo_qIMyPwoLhWU0wB4-1638631429-0-gaNycGzNBn0)
+
     const item = document.querySelectorAll('.item-card');
     const menu = document.querySelector('.display-mobile');
     const icon = document.querySelector('.fas');

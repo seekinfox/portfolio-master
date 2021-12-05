@@ -203,6 +203,9 @@ nav .mobile-nav {
   flex-direction: column;
   align-items: flex-end;
 }
+nav .mobile-nav a {
+  margin-bottom: 2rem;
+}
 nav .mobile-nav i {
   color: white;
   font-size: 2.2rem;
@@ -226,9 +229,7 @@ nav .mobile-nav .resume a {
   color: whitesmoke;
 }
 nav .mobile-nav .resume a:hover {
-  border-color: #04c2c9;
-  box-shadow: 0px 0px 2px whitesmoke, 0px 0px 3px whitesmoke inset;
-  text-shadow: 0px 0px 3px whitesmoke;
+  background-color: #e31b6d;
 }
 nav .mobile-nav .resume-block {
   display: block;
@@ -261,7 +262,7 @@ nav .mobile-nav .display-mobile .mobile-inner a:hover {
 }
 nav .mobile-nav .show {
   opacity: 1;
-  height: 6rem;
+  height: 9rem;
   transition: height 0.2s, opacity 0.5s ease-in;
 }
 
@@ -515,18 +516,12 @@ nav .mobile-nav .show {
   margin: 1rem 0;
   color: #04c2c9;
 }
-.skills-cards .card h3,
-.skills-cards .card h4 {
+.skills-cards .card h3 {
+  font-size: 1rem;
+  padding: 0.5rem 0;
   color: #e31b6d;
   font-weight: 600;
   text-transform: capitalize;
-}
-.skills-cards .card h4 {
-  margin: 1rem 0;
-}
-.skills-cards .card h3 {
-  font-size: 1.2rem;
-  padding: 0.5rem 0;
 }
 .skills-cards .card p {
   color: #252934;
@@ -549,7 +544,22 @@ nav .mobile-nav .show {
 }
 .skills-cards .card .skill i {
   font-size: 2rem;
-  position: relative;
+}
+.skills-cards .card .skill i:nth-last-of-type(4)::after {
+  content: "html";
+  margin: 0.2rem;
+  font-family: "Mirza", cursive;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  vertical-align: bottom;
+}
+.skills-cards .card .skill i:nth-last-of-type(3)::after {
+  content: "css";
+  margin: 0.2rem;
+  font-family: "Mirza", cursive;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  vertical-align: bottom;
 }
 
 .project-section {
@@ -581,7 +591,7 @@ nav .mobile-nav .show {
   width: 100%;
 }
 .project-section .filter-menu .menu {
-  max-width: 25rem;
+  max-width: 30rem;
   width: 100%;
   margin-top: 8rem;
   display: flex;
@@ -596,8 +606,8 @@ nav .mobile-nav .show {
   position: absolute;
   top: 0;
   left: 0;
-  width: 32.5%;
-  max-width: 33%;
+  width: 100%;
+  max-width: 34%;
   height: 100%;
   background: #e31b6d;
   z-index: -1;
@@ -863,8 +873,7 @@ nav .mobile-nav .show {
   color: whitesmoke;
 }
 .email form input[type=submit]:hover {
-  box-shadow: 0px 0px 2px whitesmoke, 0px 0px 2px whitesmoke inset;
-  text-shadow: 0px 0px 2px whitesmoke;
+  background: #e31b6d;
 }
 .email form textarea {
   height: 10rem;
@@ -1110,10 +1119,10 @@ footer p span {
     margin-bottom: 1rem;
   }
   .about .about-inner .p-skills p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .about .about-inner .p-skills p:nth-of-type(2) {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .intro {
@@ -1126,10 +1135,10 @@ footer p span {
     margin-left: 7rem;
   }
   .intro .intro-text h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .intro .intro-text p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .contact-section {
@@ -1143,12 +1152,39 @@ footer p span {
   .skills-cards {
     width: 75%;
   }
+  .skills-cards .card {
+    padding: 1rem 5rem;
+  }
+  .skills-cards .card h3 {
+    font-size: 1.2rem;
+  }
+  .skills-cards .card p {
+    font-size: 1.1rem;
+  }
   .skills-cards .card .skill {
     display: flex;
     width: 50%;
     justify-content: space-evenly;
   }
 
+  .project-section .filter-menu .menu {
+    border-radius: 0.5rem;
+    border: 3px solid #04c2c9;
+    max-width: 30rem;
+    width: 100%;
+  }
+  .project-section .filter-menu .menu .slider {
+    border-radius: 0.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 34%;
+  }
+  .project-section .filter-menu .menu a {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
   .project-section .items {
     padding: 1rem 2rem;
     grid-template-columns: repeat(3, 1fr);

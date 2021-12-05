@@ -107,10 +107,10 @@ $desktop-width: 1024px;
                 }
 
                 p {
-                    font-size: 1.3rem;
+                    font-size: 1.2rem;
 
                     &:nth-of-type(2) {
-                        font-size: .9rem;
+                        font-size: 1rem;
                     }
                 }
             }
@@ -127,11 +127,11 @@ $desktop-width: 1024px;
             margin-left: 7rem;
 
             h3 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             p {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
         }
     }
@@ -148,6 +148,16 @@ $desktop-width: 1024px;
         width: 75%;
 
         .card {
+            padding: 1rem 5rem;
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
             .skill {
                 display: flex;
                 width: 50%;
@@ -157,6 +167,30 @@ $desktop-width: 1024px;
     }
 
     .project-section {
+        .filter-menu {
+            .menu {
+                border-radius: .5rem;
+                border: 3px solid $light-cyan;
+                max-width: 30rem;
+                width: 100%;
+
+                //red slider animation box 
+                .slider {
+                    border-radius: .3rem;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    max-width: 34%;
+                }
+
+                a {
+                    padding: 1.5rem;
+                    font-size: 1rem;
+                }
+
+            }
+        }
 
         .items {
             padding: 1rem 2rem;

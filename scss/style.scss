@@ -168,6 +168,10 @@ nav {
         @include flex-c;
         align-items: flex-end;
 
+        a {
+            margin-bottom: 2rem;
+        }
+
         i {
             color: white;
             font-size: 2.2rem;
@@ -192,9 +196,7 @@ nav {
                 color: $grayish-white;
 
                 &:hover {
-                    border-color: $light-cyan;
-                    box-shadow: 0px 0px 2px $grayish-white, 0px 0px 3px $grayish-white inset;
-                    text-shadow: 0px 0px 3px $grayish-white;
+                    background-color: $dark-pink;
                 }
             }
         }
@@ -234,7 +236,7 @@ nav {
 
         .show {
             opacity: 1;
-            height: 6rem;
+            height: 9rem;
             transition: height .2s, opacity .5s ease-in;
         }
     }
@@ -504,25 +506,17 @@ nav {
             color: $light-cyan;
         }
 
-        h3,
-        h4 {
+        h3 {
+            font-size: 1rem;
+            padding: .5rem 0;
             color: $dark-pink;
             font-weight: 600;
             text-transform: capitalize;
         }
 
-        h4 {
-            margin: 1rem 0;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            padding: .5rem 0;
-        }
-
         p {
             color: $grayish-black;
-            font-size: .9rem;
+            font-size: 0.9rem;
             line-height: 1.5;
             margin: 1.5rem auto;
 
@@ -547,10 +541,25 @@ nav {
 
             i {
                 font-size: 2rem;
-                position: relative;
 
+                @mixin icons {
+                    margin: .2rem;
+                    font-family: $mirza;
+                    text-transform: uppercase;
+                    font-size: 1.3rem;
+                    vertical-align: bottom;
+                }
+
+                &:nth-last-of-type(4)::after {
+                    content: "html";
+                    @include icons;
+                }
+
+                &:nth-last-of-type(3)::after {
+                    content: "css";
+                    @include icons;
+                }
             }
-
         }
 
     }
@@ -576,7 +585,7 @@ nav {
         }
 
         .menu {
-            max-width: 25rem;
+            max-width: 30rem;
             width: 100%;
             margin-top: 8rem;
             @include flex-r;
@@ -585,14 +594,15 @@ nav {
             position: relative;
             z-index: 1;
 
+
             //red slider animation box 
             .slider {
                 border-radius: .3rem;
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 32.5%;
-                max-width: 33%;
+                width: 100%;
+                max-width: 34%;
                 height: 100%;
                 background: $dark-pink;
                 z-index: -1;
@@ -890,8 +900,7 @@ nav {
                 color: $grayish-white;
 
                 &:hover {
-                    box-shadow: 0px 0px 2px $grayish-white, 0px 0px 2px $grayish-white inset;
-                    text-shadow: 0px 0px 2px $grayish-white;
+                    background: $dark-pink;
                 }
             }
         }

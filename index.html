@@ -7,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- document logo-->
     <link rel="icon" type="image/png" sizes="32x32" href="../image-project/favicon-32x32.png">
+    <!--animation .css file-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <!--animation js link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+    </script>
+
     <!-- fontawsome-->
     <script src="https://kit.fontawesome.com/89c3976cfc.js" crossorigin="anonymous"></script>
     <!--css file-->
@@ -32,10 +38,10 @@
         </div>
     </section>
     <header id="home">
-        <h1>hello, i'm <span>sanket abhyankar</span>.</h1>
-        <p>I'm a front-end web developer</p>
+        <h1 class="wow fadeInRight">hello, i'm <span>sanket abhyankar</span>.</h1>
+        <p class="wow fadeInLeft">I'm a front-end web developer</p>
 
-        <a href="#projects">view my work</a>
+        <a class="wow fadeInUp" href="#projects">view my work</a>
     </header>
     <nav>
         <div class="mobile-nav">
@@ -66,14 +72,14 @@
         <h2>About</h2>
 
         <div class="about-inner">
-            <div class="p-skills">
+            <div class="p-skills wow fadeInLeft">
                 <div class="icon">
                     <i class="fas fa-rocket"></i>
                 </div>
                 <p>dynamic</p>
                 <p>I love making pages which can interact with users</p>
             </div>
-            <div class="p-skills">
+            <div class="p-skills wow fadeInLeft">
                 <div class="icon">
                     <i class="fas fa-mobile-alt"></i>
                     <i class="fas fa-laptop"></i>
@@ -81,14 +87,14 @@
                 <p>Responsive</p>
                 <p>My web pages will look good on both desktop and mobile devices.</p>
             </div>
-            <div class="p-skills">
+            <div class="p-skills wow fadeInRight">
                 <div class="icon">
                     <i class="far fa-lightbulb"></i>
                 </div>
                 <p>Intuitive</p>
                 <p>strong preference for easy to use layouts and readable code.</p>
             </div>
-            <div class="p-skills">
+            <div class="p-skills wow fadeInRight">
                 <div class="icon">
                     <i class="fas fa-fire"></i>
                 </div>
@@ -97,7 +103,7 @@
             </div>
         </div>
     </section>
-    <section class="intro">
+    <section class="intro wow fadeInUp">
         <div class="hero-photo">
             <img src="./image-project/hero.jpg" alt="sanket abhyankar-photo">
             <div class="shape"></div>
@@ -106,11 +112,11 @@
             <div class="shape"></div>
         </div>
         <div class="intro-text">
-            <h3>Who i'm i?</h3>
+            <h3>Who am i?</h3>
             <p>I'm a beginner front end developer. I have a serious passion for creating layout designs, making dynamic and static web pages, adding animations and dynamic user experience.</p>
         </div>
     </section>
-    <div class="contact-section">
+    <div class="contact-section wow fadeInUp">
         <p class="contact">Reach out to me</p>
         <div class="contact-popup">
             <div class="inner-popup">
@@ -122,27 +128,27 @@
             </div>
         </div>
     </div>
-    <section class="skills-cards">
+    <section class="skills-cards wow fadeInUp">
         <div class="card design-skills">
             <i class="fas fa-pencil-ruler"></i>
             <h3>Design</h3>
             <p>I value simple structure and clean design. Though it is not my specialty, I always enjoy the designing process.</p>
-            <h4>things i enjoy designing:</h4>
+            <h3>things i enjoy designing:</h3>
             <p>web pages, small web components, mobile.</p>
         </div>
-        <div class="card languages-skills">
+        <div class="card languages-skills wow fadeInUp">
             <i class="fas fa-laptop-code"></i>
             <h3>Front-end Developer</h3>
             <p>I like to code things from scratch and enjoy the process while my ideas come to life in the browser.</p>
-            <h4>languages i speak:</h4>
-            <div class="skill">
+            <h3>languages i speak:</h3>
+            <div class="skill wow fadeInUp">
                 <i class="fab fa-html5"></i>
                 <i class="fab fa-css3-alt"></i>
                 <i class="fab fa-sass"></i>
                 <i class="fab fa-js-square"></i>
             </div>
-            <h4>dev tools:</h4>
-            <div class="tools">
+            <h3>dev tools:</h3>
+            <div class="tools wow fadeInUp">
                 <p>brackets</p>
                 <p>Atom</p>
                 <p>codepen</p>
@@ -151,10 +157,10 @@
             </div>
         </div>
     </section>
-    <section id="projects" class="project-section">
+    <section id="projects" class="project-section wow fadeInUp">
         <div class="filter-menu">
             <h2>projects</h2>
-            <div class="menu">
+            <div class="menu wow fadeInRight">
                 <div class="slider"></div>
                 <a href="#" class="btn all" data-filter="all">all</a>
                 <a href="#" class="btn hc" data-filter="hc">html/css</a>
@@ -163,7 +169,7 @@
         </div>
 
         <div class="items">
-            <div class="item-card" data-item="hc">
+            <div class="item-card wow fadeInUp" data-item="hc">
                 <img src="./image-project/projects/Screenshot_2021-11-24%20Frontend%20Mentor%20%5BBlogr%5D.png" alt="">
                 <div class="scroll">
                     <i class="fas fa-skiing"></i>
@@ -496,8 +502,7 @@
             <a href="https://www.freecodecamp.org/seekinfox" target="_blank" rel="noreferrer"><i class="fab fa-free-code-camp"></i></a>
             <a href="https://www.linkedin.com/in/sanket-abhyankar-7542bb169/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i></a>
         </div>
-
-        <p>disign by <span>sanket abhyankar</span></p>
+        <p>developed by <span>sanket abhyankar</span></p>
     </footer>
 </body>
 
